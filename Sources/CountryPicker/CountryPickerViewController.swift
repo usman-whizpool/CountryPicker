@@ -261,7 +261,7 @@ public final class CountryPickerViewController: UIViewController {
             filteredCountries = countries
         } else if let text = query {
             filteredCountries = countries
-                .filter { $0.localizedName.localizedLowercase.contains(text.localizedLowercase) }
+                .filter { $0.localizedName.localizedLowercase.contains(text.localizedLowercase) || $0.phoneCode.localizedLowercase.contains(text.localizedLowercase) }
         }
         tableView.reloadData()
     }
