@@ -105,7 +105,7 @@ public final class CountryPickerCell: UITableViewCell {
     func set(country: Country, selectedCountry: String) {
         accessibilityIdentifier = country.isoCode
         countryFlagLabel.text = country.isoCode.getFlag()
-        countryNameLabel.text = country.localizedName
+        countryNameLabel.text = country.localizedName + " (\(country.isoCode))"
         countryCodeLabel.text = "+" + country.phoneCode
 
         if selectedCountry == country.isoCode {
